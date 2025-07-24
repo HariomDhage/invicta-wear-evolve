@@ -9,18 +9,12 @@ const AnimatedLogo = () => {
   return (
     <section className="h-screen flex items-center justify-center bg-background">
       <div className="text-center space-y-8">
-        <img 
-          src="/lovable-uploads/45dc8ffc-80b8-4f41-9c2d-996438a4bff8.png"
-          alt="INVICTAWEARS"
-          className="w-80 md:w-96 h-auto mx-auto"
-        />
-        
         <div className="space-y-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground">
-            LEGENDARY STREETWEAR
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground">
+            Fashion Store
           </h1>
           <p className="text-lg text-muted-foreground">
-            Forge Your Legacy
+            Your Style, Your Choice
           </p>
         </div>
 
