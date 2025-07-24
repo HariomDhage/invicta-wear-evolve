@@ -45,12 +45,13 @@ const Header = () => {
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold tracking-tight">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                INVICTA
-              </span>
-              <span className="text-foreground">WEARS</span>
-            </h1>
+            <a href="/" className="group flex items-center">
+              <img 
+                src="/lovable-uploads/7d2acbe7-28f8-42bf-a08b-e6fdba6f9265.png" 
+                alt="INVICTAWEARS" 
+                className="h-8 w-auto transform transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 filter drop-shadow-lg"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
