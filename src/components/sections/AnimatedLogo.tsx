@@ -17,10 +17,10 @@ const AnimatedLogo = () => {
         
         <div className="space-y-4">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            Premium Streetwear
+            INVICTAWEARS
           </h2>
           <p className="text-lg text-muted-foreground">
-            Your Style, Your Choice
+            Premium Fashion and Streetwear
           </p>
         </div>
 
