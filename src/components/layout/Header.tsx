@@ -2,16 +2,25 @@ import { useState } from 'react';
 import { Menu, Search, ShoppingBag, User, Heart, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useAuth } from '@/hooks/useAuth';
+import { useCart } from '@/hooks/useCart';
 
 const Header = () => {
+  const { user, signOut } = useAuth();
+  const { getCartCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeGender, setActiveGender] = useState('Women');
 
+  const handleSignOut = async () => {
+    await signOut();
+    window.location.href = '/';
+  };
+
   const navigation = [
-    { name: 'New In', href: '/new' },
-    { name: 'Clothing', href: '/clothing' },
-    { name: 'Accessories', href: '/accessories' },
-    { name: 'Sale', href: '/sale' },
+    { name: 'New In', href: '/products?filter=new' },
+    { name: 'Clothing', href: '/products' },
+    { name: 'Accessories', href: '/products?category=accessories' },
+    { name: 'Sale', href: '/products?filter=sale' },
   ];
 
   return (
@@ -91,7 +100,20 @@ const Header = () => {
             {/* Action Buttons */}
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Search className="h-5 w-5 md:hidden" />
-              <User className="h-5 w-5 hidden md:block" />
+              {user ? (
+                <div className="hidden md:flex items-center gap-2">
+                  <span className="text-sm text-muted-foreground">
+                    {user.email?.split('@')[0]}
+                  </span>
+                  <Button variant="ghost" size="sm" onClick={handleSignOut}>
+                    Sign Out
+                  </Button>
+                </div>
+              ) : (
+                <a href="/auth">
+                  <User className="h-5 w-5" />
+                </a>
+              )}
             </Button>
             <Button variant="ghost" size="icon">
               <Heart className="h-5 w-5" />
@@ -99,7 +121,7 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="relative">
               <ShoppingBag className="h-5 w-5" />
               <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
+                {getCartCount()}
               </span>
             </Button>
           </div>
