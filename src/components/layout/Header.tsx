@@ -103,23 +103,23 @@ const Header = () => {
               <Search className="h-5 w-5 md:hidden" />
             </Button>
             {user ? (
-              <div className="hidden md:flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">
+              <div className="flex items-center gap-1 sm:gap-2">
+                <span className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
                   {user.email?.split('@')[0]}
                 </span>
-                <Button variant="ghost" size="sm" onClick={handleSignOut}>
+                <Button variant="ghost" size="sm" onClick={handleSignOut} className="text-xs sm:text-sm px-2 sm:px-3">
                   Sign Out
                 </Button>
               </div>
             ) : (
-              <div className="hidden md:flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2">
                 <a href="/auth">
-                  <Button variant="ghost" size="sm">
+                  <Button variant="ghost" size="sm" className="text-xs sm:text-sm px-2 sm:px-3">
                     Sign In
                   </Button>
                 </a>
                 <a href="/auth">
-                  <Button variant="default" size="sm">
+                  <Button variant="default" size="sm" className="text-xs sm:text-sm px-2 sm:px-3">
                     Sign Up
                   </Button>
                 </a>
