@@ -1,5 +1,6 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import AnimatedLogo from '@/components/sections/AnimatedLogo';
 import HeroSection from '@/components/sections/HeroSection';
 import NewInSection from '@/components/sections/NewInSection';
 import ClothingSection from '@/components/sections/ClothingSection';
@@ -10,6 +11,7 @@ import Newsletter from '@/components/sections/Newsletter';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <AnimatedLogo />
       <Header />
       <main>
         <HeroSection />

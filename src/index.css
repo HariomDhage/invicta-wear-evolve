@@ -128,3 +128,47 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom keyframes for logo animations */
+@keyframes slide-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes drop-shadow-3xl {
+  0% { filter: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.25)); }
+  50% { filter: drop-shadow(0 45px 45px rgba(0, 0, 0, 0.35)); }
+  100% { filter: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.25)); }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animate-slide-down {
+    animation: slide-down 1s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 1s ease-out;
+  }
+  
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+}
