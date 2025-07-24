@@ -9,10 +9,13 @@ const AnimatedLogo = () => {
   return (
     <section className="h-screen flex items-center justify-center bg-background">
       <div className="text-center space-y-8">
+        <img 
+          src="/lovable-uploads/af2adce2-b1da-4c0d-84a5-27a50b906b2f.png"
+          alt="Logo"
+          className="w-80 md:w-96 h-auto mx-auto"
+        />
+        
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-            Fashion Store
-          </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             Premium Streetwear
           </h2>
