@@ -19,7 +19,6 @@ const Header = () => {
   const navigation = [
     { name: 'New In', href: '/products?filter=new' },
     { name: 'Clothing', href: '/products' },
-    { name: 'Accessories', href: '/products?category=accessories' },
     { name: 'Sale', href: '/products?filter=sale' },
   ];
 
@@ -59,7 +58,8 @@ const Header = () => {
             {/* Gender Toggle */}
             <div className="flex bg-muted rounded-lg p-1">
               {['Women', 'Men'].map((gender) => (
-                <button
+                <a
+                  href={`/products?gender=${gender.toLowerCase()}`}
                   key={gender}
                   onClick={() => setActiveGender(gender)}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
@@ -69,7 +69,7 @@ const Header = () => {
                   }`}
                 >
                   {gender}
-                </button>
+                </a>
               ))}
             </div>
 
@@ -154,17 +154,18 @@ const Header = () => {
               {/* Mobile Gender Toggle */}
               <div className="flex bg-muted rounded-lg p-1 mx-4">
                 {['Women', 'Men'].map((gender) => (
-                  <button
+                  <a
+                    href={`/products?gender=${gender.toLowerCase()}`}
                     key={gender}
                     onClick={() => setActiveGender(gender)}
-                    className={`flex-1 py-2 rounded-md text-sm font-medium transition-all ${
+                    className={`flex-1 py-2 rounded-md text-sm font-medium transition-all text-center block ${
                       activeGender === gender
                         ? 'bg-primary text-primary-foreground'
                         : 'text-muted-foreground'
                     }`}
                   >
                     {gender}
-                  </button>
+                  </a>
                 ))}
               </div>
 

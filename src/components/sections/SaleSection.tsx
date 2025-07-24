@@ -69,8 +69,9 @@ const SaleSection = () => {
             <Button 
               size="lg" 
               className="bg-white text-destructive hover:bg-white/90 text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black uppercase tracking-wide transform transition-all duration-300 hover:scale-110 shadow-2xl animate-pulse"
+              asChild
             >
-              Snag the Steals
+              <a href="/products?filter=sale">Snag the Steals</a>
             </Button>
             <p className="text-white/80 text-sm">
               * While supplies last. No code needed.

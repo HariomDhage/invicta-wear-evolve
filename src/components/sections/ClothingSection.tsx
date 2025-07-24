@@ -19,7 +19,7 @@ const ClothingSection = () => {
         {/* Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
           {/* Women's Section */}
-          <div className="group relative overflow-hidden rounded-2xl aspect-[3/4] sm:aspect-[4/5] cursor-pointer transform transition-all duration-500 hover:scale-105">
+          <a href="/products?gender=women" className="group relative overflow-hidden rounded-2xl aspect-[3/4] sm:aspect-[4/5] cursor-pointer transform transition-all duration-500 hover:scale-105">
             <img 
               src={capImage} 
               alt="Women's Collection" 
@@ -40,10 +40,10 @@ const ClothingSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
 
           {/* Men's Section */}
-          <div className="group relative overflow-hidden rounded-2xl aspect-[3/4] sm:aspect-[4/5] cursor-pointer transform transition-all duration-500 hover:scale-105">
+          <a href="/products?gender=men" className="group relative overflow-hidden rounded-2xl aspect-[3/4] sm:aspect-[4/5] cursor-pointer transform transition-all duration-500 hover:scale-105">
             <img 
               src={sneakersImage} 
               alt="Men's Collection" 
@@ -64,7 +64,7 @@ const ClothingSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* Central CTA */}
@@ -73,8 +73,9 @@ const ClothingSection = () => {
             size="lg" 
             variant="outline" 
             className="border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105"
+            asChild
           >
-            Shop All Apparel
+            <a href="/products">Shop All Apparel</a>
           </Button>
         </div>
       </div>

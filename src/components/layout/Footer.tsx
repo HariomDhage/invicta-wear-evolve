@@ -1,8 +1,45 @@
+import { useState } from 'react';
 import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({
+        title: 'Subscribed successfully!',
+        description: 'Thank you for subscribing to our newsletter.',
+      });
+      setEmail('');
+    }
+  };
+
+  const getFooterLink = (linkName: string) => {
+    const linkMap: { [key: string]: string } = {
+      'New Arrivals': '/products?filter=new',
+      'Women': '/products?gender=women',
+      'Men': '/products?gender=men',
+      'Accessories': '/products?category=accessories',
+      'Sale': '/products?filter=sale',
+      'Size Guide': '/size-guide',
+      'Shipping Info': '/shipping',
+      'Returns': '/returns',
+      'Contact Us': '/contact',
+      'FAQ': '/faq',
+      'About Us': '/about',
+      'Careers': '/careers',
+      'Press': '/press',
+      'Sustainability': '/sustainability',
+      'Terms': '/terms'
+    };
+    return linkMap[linkName] || '#';
+  };
+
   const footerSections = [
     {
       title: 'Shop',
@@ -28,15 +65,19 @@ const Footer = () => {
             <p className="text-primary-foreground/80 mb-6">
               Get the latest drops, exclusive offers, and fitness tips delivered to your inbox.
             </p>
-            <div className="flex gap-4 max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-4 max-w-md mx-auto">
               <Input
+                type="email"
                 placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-background/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+                required
               />
-              <Button variant="secondary" className="px-8">
+              <Button type="submit" variant="secondary" className="px-8">
                 Subscribe
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -79,7 +120,7 @@ const Footer = () => {
                 {section.links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={getFooterLink(link)}
                       className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                     >
                       {link}

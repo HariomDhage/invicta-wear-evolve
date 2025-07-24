@@ -41,9 +41,12 @@ const NewInSection = () => {
             <Button 
               size="lg" 
               className="group bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-500 transform hover:scale-105 shadow-premium"
+              asChild
             >
-              Explore Fresh Fits
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              <a href="/products?filter=new">
+                Explore Fresh Fits
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </a>
             </Button>
           </div>
 

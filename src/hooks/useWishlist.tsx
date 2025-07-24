@@ -7,6 +7,16 @@ interface WishlistItem {
   product_id: string;
   user_id: string;
   created_at: string;
+  products?: {
+    id: string;
+    name: string;
+    slug: string;
+    price: number;
+    product_images?: {
+      image_url: string;
+      alt_text: string;
+    }[];
+  };
 }
 
 export const useWishlist = () => {
@@ -24,7 +34,19 @@ export const useWishlist = () => {
     try {
       const { data, error } = await supabase
         .from('wishlist_items')
-        .select('*')
+        .select(`
+          *,
+          products (
+            id,
+            name,
+            slug,
+            price,
+            product_images (
+              image_url,
+              alt_text
+            )
+          )
+        `)
         .eq('user_id', user.id)
         .order('created_at', { ascending: false });
 

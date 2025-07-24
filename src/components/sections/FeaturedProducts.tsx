@@ -3,11 +3,15 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useProducts } from '@/hooks/useProducts';
 import { useCart } from '@/hooks/useCart';
+import { useWishlist } from '@/hooks/useWishlist';
+import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
 
 const FeaturedProducts = () => {
   const { products, loading } = useProducts({ gender: '', category: '' });
   const { addToCart } = useCart();
+  const { addToWishlist, isInWishlist } = useWishlist();
+  const { user } = useAuth();
   const { toast } = useToast();
 
   const handleAddToCart = async (productId: string) => {
@@ -15,6 +19,22 @@ const FeaturedProducts = () => {
     toast({
       title: 'Added to cart!',
       description: 'Item has been added to your shopping cart.',
+    });
+  };
+
+  const handleAddToWishlist = async (productId: string) => {
+    if (!user) {
+      toast({
+        title: 'Sign in required',
+        description: 'Please sign in to add items to your wishlist.',
+      });
+      return;
+    }
+    
+    await addToWishlist(productId);
+    toast({
+      title: 'Added to wishlist!',
+      description: 'Item has been saved to your wishlist.',
     });
   };
 
@@ -76,8 +96,9 @@ const FeaturedProducts = () => {
                   variant="ghost"
                   size="icon"
                   className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm hover:bg-background"
+                  onClick={() => handleAddToWishlist(product.id)}
                 >
-                  <Heart className="h-4 w-4" />
+                  <Heart className={`h-4 w-4 ${isInWishlist(product.id) ? 'fill-red-500 text-red-500' : ''}`} />
                 </Button>
 
                 {/* Quick Add Button */}
