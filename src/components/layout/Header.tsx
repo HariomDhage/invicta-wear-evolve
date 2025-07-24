@@ -125,19 +125,25 @@ const Header = () => {
                 </a>
               </div>
             )}
-            <a href="/wishlist">
-              <Button variant="ghost" size="icon">
-                <Heart className="h-5 w-5" />
-              </Button>
-            </a>
-            <a href="/cart">
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingBag className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {getCartCount()}
-                </span>
-              </Button>
-            </a>
+            
+            {/* Show cart and wishlist only for authenticated users */}
+            {user && (
+              <>
+                <a href="/wishlist">
+                  <Button variant="ghost" size="icon">
+                    <Heart className="h-5 w-5" />
+                  </Button>
+                </a>
+                <a href="/cart">
+                  <Button variant="ghost" size="icon" className="relative">
+                    <ShoppingBag className="h-5 w-5" />
+                    <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {getCartCount()}
+                    </span>
+                  </Button>
+                </a>
+              </>
+            )}
           </div>
         </div>
 
