@@ -97,7 +97,7 @@ const FeaturedProducts = () => {
                   {product.categories?.name} • {product.gender}
                 </div>
                 <h3 className="font-semibold text-lg group-hover:text-secondary transition-colors">
-                  {product.name}
+                  <a href={`/products/${product.slug}`}>{product.name}</a>
                 </h3>
 
                 {/* Rating */}
