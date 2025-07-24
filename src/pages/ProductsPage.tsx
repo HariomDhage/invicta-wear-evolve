@@ -17,8 +17,8 @@ const ProductsPage = () => {
   const { addToCart } = useCart();
   
   const [filters, setFilters] = useState({
-    category: '',
-    gender: '',
+    category: 'all',
+    gender: 'all',
     priceRange: [0, 200] as [number, number],
     search: '',
   });
@@ -97,7 +97,7 @@ const ProductsPage = () => {
                     <SelectValue placeholder="Gender" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All</SelectItem>
+                    <SelectItem value="all">All</SelectItem>
                     <SelectItem value="women">Women</SelectItem>
                     <SelectItem value="men">Men</SelectItem>
                     <SelectItem value="unisex">Unisex</SelectItem>
@@ -113,7 +113,7 @@ const ProductsPage = () => {
                     <SelectValue placeholder="Category" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Categories</SelectItem>
+                    <SelectItem value="all">All Categories</SelectItem>
                     <SelectItem value="training">Training</SelectItem>
                     <SelectItem value="yoga">Yoga</SelectItem>
                     <SelectItem value="running">Running</SelectItem>
@@ -270,7 +270,7 @@ const ProductsPage = () => {
                 <Button
                   variant="outline"
                   className="mt-4"
-                  onClick={() => setFilters({ category: '', gender: '', priceRange: [0, 200], search: '' })}
+                  onClick={() => setFilters({ category: 'all', gender: 'all', priceRange: [0, 200], search: '' })}
                 >
                   Clear Filters
                 </Button>

@@ -61,11 +61,11 @@ export const useProducts = (filters: ProductFilters = {}) => {
           .eq('is_active', true);
 
         // Apply filters
-        if (filters.category) {
+        if (filters.category && filters.category !== 'all') {
           query = query.eq('categories.slug', filters.category);
         }
 
-        if (filters.gender) {
+        if (filters.gender && filters.gender !== 'all') {
           query = query.eq('gender', filters.gender);
         }
 
