@@ -47,9 +47,9 @@ const Header = () => {
           <div className="flex-shrink-0">
             <a href="/" className="group flex items-center">
               <img 
-                src="/lovable-uploads/7d2acbe7-28f8-42bf-a08b-e6fdba6f9265.png" 
+                src="/lovable-uploads/3cd1d943-3773-42e3-87bc-b3a903fe1a63.png" 
                 alt="INVICTAWEARS" 
-                className="h-8 w-auto transform transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 filter drop-shadow-lg"
+                className="h-12 w-auto transform transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 filter drop-shadow-lg"
               />
             </a>
           </div>
