@@ -45,11 +45,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="group flex items-center">
-              <img 
-                src="/lovable-uploads/3cd1d943-3773-42e3-87bc-b3a903fe1a63.png" 
-                alt="INVICTAWEARS" 
-                className="h-8 sm:h-10 md:h-12 w-auto transform transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 filter drop-shadow-lg"
-              />
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground tracking-tight transform transition-all duration-300 group-hover:scale-105">
+                Fashion Store
+              </h1>
             </a>
           </div>
 
