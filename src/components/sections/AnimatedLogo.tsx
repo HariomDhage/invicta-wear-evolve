@@ -10,6 +10,10 @@ const AnimatedLogo = () => {
       setTimeout(() => setPhase(1), 300),
       setTimeout(() => setPhase(2), 1000),
       setTimeout(() => setPhase(3), 2000),
+      // Auto scroll after 3 seconds
+      setTimeout(() => {
+        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+      }, 3000),
     ];
     return () => timeouts.forEach(clearTimeout);
   }, []);
@@ -52,7 +56,7 @@ const AnimatedLogo = () => {
               <img 
                 src="/lovable-uploads/45dc8ffc-80b8-4f41-9c2d-996438a4bff8.png"
                 alt=""
-                className="w-80 md:w-96 h-auto blur-2xl opacity-30 scale-110"
+                className="w-96 md:w-[32rem] lg:w-[40rem] xl:w-[48rem] h-auto blur-2xl opacity-30 scale-110"
               />
             </div>
             
@@ -60,7 +64,7 @@ const AnimatedLogo = () => {
             <img 
               src="/lovable-uploads/45dc8ffc-80b8-4f41-9c2d-996438a4bff8.png"
               alt="INVICTAWEARS"
-              className={`relative w-80 md:w-96 h-auto filter transition-all duration-700 ${
+              className={`relative w-96 md:w-[32rem] lg:w-[40rem] xl:w-[48rem] h-auto filter transition-all duration-700 ${
                 phase >= 2 ? 'drop-shadow-2xl brightness-110' : 'drop-shadow-lg'
               } ${phase >= 3 ? 'hover:scale-105' : ''}`}
             />
