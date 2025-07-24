@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground text-center py-2 text-sm">
+      <div className="bg-primary text-primary-foreground text-center py-2 px-4 text-xs sm:text-sm">
         Free shipping on orders over $150 SGD | International shipping available
       </div>
 
@@ -49,7 +49,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/3cd1d943-3773-42e3-87bc-b3a903fe1a63.png" 
                 alt="INVICTAWEARS" 
-                className="h-12 w-auto transform transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 filter drop-shadow-lg"
+                className="h-8 sm:h-10 md:h-12 w-auto transform transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 filter drop-shadow-lg"
               />
             </a>
           </div>
@@ -86,14 +86,14 @@ const Header = () => {
           </nav>
 
           {/* Right Side Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Search */}
             <div className="hidden md:flex items-center">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search products..."
-                  className="pl-10 w-64 bg-muted/50 border-none focus:bg-background transition-colors"
+                  className="pl-10 w-48 sm:w-56 md:w-64 bg-muted/50 border-none focus:bg-background transition-colors"
                 />
               </div>
             </div>

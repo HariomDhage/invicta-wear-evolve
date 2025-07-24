@@ -18,49 +18,49 @@ const SaleSection = () => {
       <div className="relative container mx-auto px-4">
         <div className="text-center">
           {/* Lightning Effect */}
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-6 sm:mb-8">
             <div className="relative">
-              <Zap className="w-16 h-16 text-white animate-pulse" />
+              <Zap className="w-12 h-12 sm:w-16 sm:h-16 text-white animate-pulse" />
               <div className="absolute inset-0 animate-ping">
-                <Zap className="w-16 h-16 text-white/50" />
+                <Zap className="w-12 h-12 sm:w-16 sm:h-16 text-white/50" />
               </div>
             </div>
           </div>
 
           {/* Sale Badge */}
-          <div className="inline-flex items-center bg-white text-destructive px-6 py-3 rounded-full font-bold text-lg mb-8 animate-bounce">
+          <div className="inline-flex items-center bg-white text-destructive px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-base sm:text-lg mb-6 sm:mb-8 animate-bounce">
             <Timer className="w-5 h-5 mr-2" />
             LIMITED TIME ONLY
           </div>
 
           {/* Main Sale Heading */}
-          <div className="mb-8">
-            <h2 className="text-6xl lg:text-9xl font-black text-white mb-4 tracking-tight">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black text-white mb-4 tracking-tight">
               <span className="block animate-pulse">UP TO</span>
-              <span className="block text-8xl lg:text-[12rem] text-white drop-shadow-2xl animate-bounce">
+              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] text-white drop-shadow-2xl animate-bounce">
                 50% OFF
               </span>
             </h2>
-            <p className="text-2xl text-white/90 font-semibold uppercase tracking-widest">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-semibold uppercase tracking-widest">
               Flash Sale • Premium Gear
             </p>
           </div>
 
           {/* Urgency Elements */}
-          <div className="flex justify-center items-center space-x-8 mb-12">
+          <div className="flex justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 mb-8 sm:mb-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white animate-pulse">24</div>
-              <div className="text-sm text-white/80 uppercase tracking-wide">Hours</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white animate-pulse">24</div>
+              <div className="text-xs sm:text-sm text-white/80 uppercase tracking-wide">Hours</div>
             </div>
             <div className="w-2 h-2 bg-white rounded-full animate-ping" />
             <div className="text-center">
-              <div className="text-3xl font-bold text-white animate-pulse">59</div>
-              <div className="text-sm text-white/80 uppercase tracking-wide">Minutes</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white animate-pulse">59</div>
+              <div className="text-xs sm:text-sm text-white/80 uppercase tracking-wide">Minutes</div>
             </div>
             <div className="w-2 h-2 bg-white rounded-full animate-ping" />
             <div className="text-center">
-              <div className="text-3xl font-bold text-white animate-pulse">59</div>
-              <div className="text-sm text-white/80 uppercase tracking-wide">Seconds</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white animate-pulse">59</div>
+              <div className="text-xs sm:text-sm text-white/80 uppercase tracking-wide">Seconds</div>
             </div>
           </div>
 
@@ -68,7 +68,7 @@ const SaleSection = () => {
           <div className="space-y-4">
             <Button 
               size="lg" 
-              className="bg-white text-destructive hover:bg-white/90 text-xl px-12 py-6 rounded-full font-black uppercase tracking-wide transform transition-all duration-300 hover:scale-110 shadow-2xl animate-pulse"
+              className="bg-white text-destructive hover:bg-white/90 text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black uppercase tracking-wide transform transition-all duration-300 hover:scale-110 shadow-2xl animate-pulse"
             >
               Snag the Steals
             </Button>

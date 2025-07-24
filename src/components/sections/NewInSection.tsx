@@ -14,7 +14,7 @@ const NewInSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="text-left space-y-8">
             {/* Premium Badge */}
@@ -26,13 +26,13 @@ const NewInSection = () => {
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h2 className="text-6xl lg:text-8xl font-black tracking-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight">
                 <span className="block text-foreground">NEW</span>
                 <span className="block bg-gradient-accent bg-clip-text text-transparent animate-pulse">
                   ARRIVALS
                 </span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed">
                 Exclusive pieces crafted for champions. Limited editions that define the future of athletic performance.
               </p>
             </div>
@@ -49,7 +49,7 @@ const NewInSection = () => {
 
           {/* Right Visual */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div className="aspect-square relative overflow-hidden rounded-2xl shadow-premium group">
                 <img 
                   src={hoodieImage} 

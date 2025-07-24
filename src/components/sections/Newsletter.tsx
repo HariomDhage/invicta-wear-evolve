@@ -28,17 +28,17 @@ const Newsletter = () => {
           </div>
 
           {/* Content */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Join the <span className="text-secondary">Invicta</span> Squad
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto px-4">
             Be the first to know about new drops, exclusive member discounts, 
             and behind-the-scenes content from our athletes.
           </p>
 
           {/* Newsletter Form */}
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-            <div className="flex gap-4">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto px-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Input
                 type="email"
                 placeholder="Enter your email"
@@ -50,7 +50,7 @@ const Newsletter = () => {
               <Button 
                 type="submit"
                 variant="secondary"
-                className="px-8"
+                className="px-6 sm:px-8 w-full sm:w-auto"
                 disabled={isSubscribed}
               >
                 {isSubscribed ? (

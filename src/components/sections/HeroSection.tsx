@@ -25,7 +25,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight">
             <span className="block">UNLEASH</span>
             <span className="block bg-gradient-accent bg-clip-text text-transparent">
               YOUR POWER
@@ -33,7 +33,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed px-4">
             Premium activewear designed for athletes who refuse to settle. 
             Built in Singapore, worn worldwide.
           </p>
@@ -56,16 +56,16 @@ const HeroSection = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-lg mx-auto px-4">
             {[
               { number: '50K+', label: 'Athletes' },
               { number: '25+', label: 'Countries' },
               { number: '4.9★', label: 'Rating' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-secondary mb-1">
-                  {stat.number}
-                </div>
+               <div className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary mb-1">
+                 {stat.number}
+               </div>
                 <div className="text-sm text-white/80 uppercase tracking-wider">
                   {stat.label}
                 </div>
