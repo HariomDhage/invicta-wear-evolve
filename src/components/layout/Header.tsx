@@ -101,30 +101,37 @@ const Header = () => {
             {/* Action Buttons */}
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Search className="h-5 w-5 md:hidden" />
-              {user ? (
-                <div className="hidden md:flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">
-                    {user.email?.split('@')[0]}
-                  </span>
-                  <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                    Sign Out
-                  </Button>
-                </div>
-              ) : (
-                <a href="/auth">
+            </Button>
+            
+            {user ? (
+              <div className="hidden md:flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">
+                  {user.email?.split('@')[0]}
+                </span>
+                <Button variant="ghost" size="sm" onClick={handleSignOut}>
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              <a href="/auth">
+                <Button variant="ghost" size="icon">
                   <User className="h-5 w-5" />
-                </a>
-              )}
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Heart className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                {getCartCount()}
-              </span>
-            </Button>
+                </Button>
+              </a>
+            )}
+            <a href="/wishlist">
+              <Button variant="ghost" size="icon">
+                <Heart className="h-5 w-5" />
+              </Button>
+            </a>
+            <a href="/cart">
+              <Button variant="ghost" size="icon" className="relative">
+                <ShoppingBag className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {getCartCount()}
+                </span>
+              </Button>
+            </a>
           </div>
         </div>
 
@@ -171,6 +178,35 @@ const Header = () => {
                     {item.name}
                   </a>
                 ))}
+                
+                {/* Mobile Auth Section */}
+                <div className="border-t border-border pt-4 mt-4">
+                  {user ? (
+                    <div className="space-y-2">
+                      <div className="px-4 py-2 text-sm text-muted-foreground">
+                        Signed in as {user.email?.split('@')[0]}
+                      </div>
+                      <a href="/profile" className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                        My Account
+                      </a>
+                      <button 
+                        onClick={handleSignOut}
+                        className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        Sign Out
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      <a href="/auth" className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                        Sign In
+                      </a>
+                      <a href="/auth" className="block px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded mx-4">
+                        Sign Up
+                      </a>
+                    </div>
+                  )}
+                </div>
               </nav>
             </div>
           </div>
