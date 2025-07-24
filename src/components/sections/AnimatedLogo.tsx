@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AnimatedLogo = () => {
   const [phase, setPhase] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeouts = [
@@ -87,7 +89,9 @@ const AnimatedLogo = () => {
         <div className={`mt-12 transition-all duration-1000 delay-1000 ${
           phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
-          <button className="group relative px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 
+          <button 
+            onClick={() => navigate('/products')}
+            className="group relative px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 
                            text-white font-medium tracking-wide rounded-lg
                            hover:bg-white/20 hover:border-white/40 transition-all duration-300
                            hover:scale-105 hover:shadow-xl">
