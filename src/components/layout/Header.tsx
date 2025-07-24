@@ -102,7 +102,6 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Search className="h-5 w-5 md:hidden" />
             </Button>
-            
             {user ? (
               <div className="hidden md:flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">
@@ -113,11 +112,18 @@ const Header = () => {
                 </Button>
               </div>
             ) : (
-              <a href="/auth">
-                <Button variant="ghost" size="icon">
-                  <User className="h-5 w-5" />
-                </Button>
-              </a>
+              <div className="hidden md:flex items-center gap-2">
+                <a href="/auth">
+                  <Button variant="ghost" size="sm">
+                    Sign In
+                  </Button>
+                </a>
+                <a href="/auth">
+                  <Button variant="default" size="sm">
+                    Sign Up
+                  </Button>
+                </a>
+              </div>
             )}
             <a href="/wishlist">
               <Button variant="ghost" size="icon">
