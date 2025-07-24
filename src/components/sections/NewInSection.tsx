@@ -1,5 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import hoodieImage from '@/assets/hoodie-product.jpg';
+import joggersImage from '@/assets/joggers-product.jpg';
 
 const NewInSection = () => {
   return (
@@ -47,13 +49,22 @@ const NewInSection = () => {
 
           {/* Right Visual */}
           <div className="relative">
-            <div className="aspect-square relative overflow-hidden rounded-3xl shadow-premium">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/20 animate-pulse" />
-              <div className="absolute inset-4 bg-gradient-to-br from-invicta-dark to-primary rounded-2xl flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-accent animate-spin border-4 border-white/20" />
-                  <p className="text-lg font-semibold">Premium Collection</p>
-                </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="aspect-square relative overflow-hidden rounded-2xl shadow-premium group">
+                <img 
+                  src={hoodieImage} 
+                  alt="Premium Hoodie" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="aspect-square relative overflow-hidden rounded-2xl shadow-premium group">
+                <img 
+                  src={joggersImage} 
+                  alt="Premium Joggers" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
             

@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import capImage from '@/assets/cap-product.jpg';
+import sneakersImage from '@/assets/sneakers-product.jpg';
 
 const ClothingSection = () => {
   return (
@@ -18,8 +20,12 @@ const ClothingSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Women's Section */}
           <div className="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer transform transition-all duration-500 hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 to-accent/90 hover:from-secondary hover:to-accent transition-all duration-500" />
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZG90cyIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjMiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZG90cykiLz48L3N2Zz4=')] opacity-30" />
+            <img 
+              src={capImage} 
+              alt="Women's Collection" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-secondary/70 to-accent/70 hover:from-secondary/50 hover:to-accent/50 transition-all duration-500" />
             
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
               <div className="transform transition-transform duration-500 group-hover:translate-y-0 translate-y-4">
@@ -34,18 +40,16 @@ const ClothingSection = () => {
                 </div>
               </div>
             </div>
-
-            {/* Motion Effect */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-32 h-32 rounded-full border-2 border-white/30 animate-ping" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/50 animate-pulse" />
-            </div>
           </div>
 
           {/* Men's Section */}
           <div className="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer transform transition-all duration-500 hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-br from-invicta-dark/90 to-primary/90 hover:from-invicta-dark hover:to-primary transition-all duration-500" />
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0ibGluZXMiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGxpbmUgeDE9IjAiIHkxPSIyMCIgeDI9IjQwIiB5Mj0iMjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMiIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNsaW5lcykiLz48L3N2Zz4=')] opacity-40" />
+            <img 
+              src={sneakersImage} 
+              alt="Men's Collection" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-invicta-dark/70 to-primary/70 hover:from-invicta-dark/50 hover:to-primary/50 transition-all duration-500" />
             
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
               <div className="transform transition-transform duration-500 group-hover:translate-y-0 translate-y-4">
@@ -59,12 +63,6 @@ const ClothingSection = () => {
                   <div className="ml-2 w-6 h-px bg-white transform transition-all duration-300 group-hover:w-8" />
                 </div>
               </div>
-            </div>
-
-            {/* Motion Effect */}
-            <div className="absolute top-1/2 right-8">
-              <div className="w-24 h-24 border-l-2 border-white/40 animate-spin" />
-              <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-12 h-px bg-white/60 animate-pulse" />
             </div>
           </div>
         </div>

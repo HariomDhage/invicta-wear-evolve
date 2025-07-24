@@ -1,12 +1,19 @@
 import { Zap, Timer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import saleBanner from '@/assets/sale-banner.jpg';
 
 const SaleSection = () => {
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* High Contrast Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-destructive via-destructive/90 to-primary" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9InpoaWciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNMCAwaDEwMHYxMDBIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMCAyMGgxMDBNMCA0MGgxMDBNMCA2MGgxMDBNMCA4MGgxMDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCN6aGlnKSIvPjwvc3ZnPg==')] opacity-30" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={saleBanner} 
+          alt="Sale Banner" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-destructive/80" />
+      </div>
       
       <div className="relative container mx-auto px-4">
         <div className="text-center">
