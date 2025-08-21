@@ -1,79 +1,48 @@
-import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import hoodieImage from '@/assets/hoodie-product.jpg';
 import joggersImage from '@/assets/joggers-product.jpg';
 
 const NewInSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted to-background">
-      {/* Cinematic Background with Overlay */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-invicta-dark/80 via-transparent to-accent/20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iaGV4IiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0yMCAwbDE1IDEwdjIwbC0xNSAxMC0xNS0xMFYxMHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNoZXgpIi8+PC9zdmc+')] animate-pulse opacity-20" />
-      </div>
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            New Arrivals
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Check out our latest products
+          </p>
+          <Button>Shop New Arrivals</Button>
+        </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-left space-y-8">
-            {/* Premium Badge */}
-            <div className="inline-flex items-center">
-              <span className="bg-gradient-to-r from-accent to-secondary text-transparent bg-clip-text text-sm font-semibold tracking-widest uppercase px-6 py-3 border border-accent/30 rounded-full backdrop-blur-sm">
-                Just Dropped
-              </span>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="group">
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src={hoodieImage} 
+                alt="Premium Hoodie" 
+                className="w-full h-80 object-cover"
+              />
             </div>
-
-            {/* Main Heading */}
-            <div className="space-y-4">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight">
-                <span className="block text-foreground">NEW</span>
-                <span className="block bg-gradient-accent bg-clip-text text-transparent animate-pulse">
-                  ARRIVALS
-                </span>
-              </h2>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                Exclusive pieces crafted for champions. Limited editions that define the future of athletic performance.
-              </p>
+            <div className="mt-4">
+              <h3 className="font-semibold text-lg">Premium Hoodie</h3>
+              <p className="text-muted-foreground">From $89</p>
             </div>
-
-            {/* CTA */}
-            <Button 
-              size="lg" 
-              className="group bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-500 transform hover:scale-105 shadow-premium"
-              asChild
-            >
-              <a href="/products?filter=new">
-                Explore Fresh Fits
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
-              </a>
-            </Button>
           </div>
 
-          {/* Right Visual */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="aspect-square relative overflow-hidden rounded-2xl shadow-premium group">
-                <img 
-                  src={hoodieImage} 
-                  alt="Premium Hoodie" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="aspect-square relative overflow-hidden rounded-2xl shadow-premium group">
-                <img 
-                  src={joggersImage} 
-                  alt="Premium Joggers" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
+          <div className="group">
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src={joggersImage} 
+                alt="Athletic Joggers" 
+                className="w-full h-80 object-cover"
+              />
             </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-secondary rounded-full animate-bounce opacity-80" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent rounded-full animate-pulse opacity-60" />
+            <div className="mt-4">
+              <h3 className="font-semibold text-lg">Athletic Joggers</h3>
+              <p className="text-muted-foreground">From $69</p>
+            </div>
           </div>
         </div>
       </div>

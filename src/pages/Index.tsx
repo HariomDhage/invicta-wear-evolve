@@ -1,24 +1,30 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import AnimatedLogo from '@/components/sections/AnimatedLogo';
-import HeroSection from '@/components/sections/HeroSection';
-import NewInSection from '@/components/sections/NewInSection';
+import FeaturedProducts from '@/components/sections/FeaturedProducts';
 import ClothingSection from '@/components/sections/ClothingSection';
-
-import SaleSection from '@/components/sections/SaleSection';
+import AccessoriesSection from '@/components/sections/AccessoriesSection';
 import Newsletter from '@/components/sections/Newsletter';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <AnimatedLogo />
       <Header />
       <main>
-        <HeroSection />
-        <NewInSection />
-        <ClothingSection />
+        {/* Simple hero banner */}
+        <section className="bg-primary text-primary-foreground py-16 text-center">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              INVICTAWEARS
+            </h1>
+            <p className="text-lg md:text-xl mb-8 opacity-90">
+              Premium Fashion and Streetwear
+            </p>
+          </div>
+        </section>
         
-        <SaleSection />
+        <FeaturedProducts />
+        <ClothingSection />
+        <AccessoriesSection />
         <Newsletter />
       </main>
       <Footer />
