@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import hoodieImage from '@/assets/hoodie-product.jpg';
 import joggersImage from '@/assets/joggers-product.jpg';
 import sneakersImage from '@/assets/sneakers-product.jpg';
@@ -46,9 +47,11 @@ const FeaturedProducts = () => {
             <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">Womens</p>
             <h2 className="text-2xl md:text-3xl font-bold">PREMIUM ESSENTIALS.</h2>
           </div>
-          <Button variant="ghost" className="hidden md:flex items-center text-sm">
-            View All
-            <ArrowRight className="w-4 h-4 ml-2" />
+          <Button variant="ghost" className="hidden md:flex items-center text-sm" asChild>
+            <Link to="/women">
+              View All
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
           </Button>
         </div>
 
@@ -74,8 +77,8 @@ const FeaturedProducts = () => {
 
         {/* Mobile View All Button */}
         <div className="mt-8 md:hidden text-center">
-          <Button variant="outline" className="w-full">
-            View All
+          <Button variant="outline" className="w-full" asChild>
+            <Link to="/women">View All</Link>
           </Button>
         </div>
       </div>

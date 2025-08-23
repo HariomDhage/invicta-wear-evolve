@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-streetwear.jpg';
 
 const HeroSection = () => {
@@ -32,7 +33,7 @@ const HeroSection = () => {
             className="bg-white text-black hover:bg-white/90 px-8 py-3 text-lg font-semibold"
             asChild
           >
-            <a href="/products">SHOP NOW</a>
+            <Link to="/women">SHOP NOW</Link>
           </Button>
         </div>
       </div>

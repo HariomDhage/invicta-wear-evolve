@@ -19,17 +19,14 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/products?category=women" className="text-sm font-medium hover:text-primary transition-colors uppercase">
+            <Link to="/women" className="text-sm font-medium hover:text-primary transition-colors uppercase">
               WOMEN
             </Link>
-            <Link to="/products?category=men" className="text-sm font-medium hover:text-primary transition-colors uppercase">
+            <Link to="/men" className="text-sm font-medium hover:text-primary transition-colors uppercase">
               MEN
             </Link>
             <Link to="/products?category=accessories" className="text-sm font-medium hover:text-primary transition-colors uppercase">
               ACCESSORIES
-            </Link>
-            <Link to="/products?filter=sale" className="text-sm font-medium hover:text-primary transition-colors uppercase text-destructive">
-              SALE
             </Link>
           </nav>
 

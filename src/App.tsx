@@ -12,6 +12,8 @@ import ProfilePage from "./pages/ProfilePage";
 import WishlistPage from "./pages/WishlistPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import WomensPage from "./pages/WomensPage";
+import MensPage from "./pages/MensPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:slug" element={<ProductDetailPage />} />
+          <Route path="/women" element={<WomensPage />} />
+          <Route path="/men" element={<MensPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/profile" element={<ProfilePage />} />
