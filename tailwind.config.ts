@@ -52,11 +52,24 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// InvictaWears brand colors
-				'invicta-orange': 'hsl(var(--invicta-orange))',
-				'invicta-blue': 'hsl(var(--invicta-blue))',
-				'invicta-gray': 'hsl(var(--invicta-gray))',
-				'invicta-dark': 'hsl(var(--invicta-dark))',
+				// Invictwears brand colors from brief
+				'lovable-red': 'hsl(var(--lovable-red))',
+				'electric-berry': 'hsl(var(--electric-berry))',
+				'charcoal': 'hsl(var(--charcoal))',
+				'near-white': 'hsl(var(--near-white))',
+				// State colors
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				info: {
+					DEFAULT: 'hsl(var(--info))',
+					foreground: 'hsl(var(--info-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -74,13 +87,17 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-subtle': 'var(--gradient-subtle)',
 			},
 			boxShadow: {
+				'soft': 'var(--shadow-soft)',
 				'premium': 'var(--shadow-premium)',
-				'card': 'var(--shadow-card)',
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				heading: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
