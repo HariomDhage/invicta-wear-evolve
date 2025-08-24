@@ -46,9 +46,13 @@ const ComingSoon = () => {
 
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-6 leading-tight tracking-tight">
-              INVICTAWEARS
-            </h1>
+            <div className="mb-6">
+              <img 
+                src="/lovable-uploads/974e41d2-aaad-4427-8d00-16c07ab9321d.png" 
+                alt="Invictawears Logo"
+                className="h-32 md:h-40 lg:h-48 mx-auto"
+              />
+            </div>
             
             <p className="text-2xl md:text-3xl text-white/90 mb-4 font-medium">
               Coming Soon
