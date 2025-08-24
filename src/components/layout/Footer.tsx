@@ -103,11 +103,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>info@invictawears.club</span>
+                <span>hello@invictawears.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+65 9693 3140</span>
+                <span>+65 8123 4567</span>
               </div>
             </div>
           </div>
