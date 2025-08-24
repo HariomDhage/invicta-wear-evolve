@@ -48,7 +48,7 @@ const ComingSoon = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <img 
-                src="/lovable-uploads/974e41d2-aaad-4427-8d00-16c07ab9321d.png" 
+                src="/lovable-uploads/7cbd0dc3-4608-46ca-b3cf-00fdc17317e6.png" 
                 alt="Invictawears Logo"
                 className="h-48 md:h-80 lg:h-96 xl:h-[32rem] 2xl:h-[40rem] mx-auto max-w-full"
               />
