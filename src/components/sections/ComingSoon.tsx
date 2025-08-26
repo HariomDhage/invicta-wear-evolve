@@ -41,24 +41,24 @@ const ComingSoon = () => {
             alt="Invictawears - Premium Activewear Coming Soon" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-hero opacity-70" />
+          <div className="absolute inset-0 bg-gradient-hero opacity-50" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center">
+        <div className="relative z-20 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <img 
                 src="/lovable-uploads/7cbd0dc3-4608-46ca-b3cf-00fdc17317e6.png" 
                 alt="Invictawears Logo"
-                className="h-48 md:h-80 lg:h-96 xl:h-[32rem] 2xl:h-[40rem] mx-auto max-w-full"
+                className="h-48 md:h-80 lg:h-96 xl:h-[32rem] 2xl:h-[40rem] mx-auto max-w-full drop-shadow-lg"
               />
             </div>
             
-            <p className="text-2xl md:text-3xl text-white/90 mb-4 font-medium">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 drop-shadow-lg">
               Coming Soon
-            </p>
+            </h1>
             
-            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl lg:text-3xl text-primary-foreground/90 mb-12 max-w-3xl mx-auto drop-shadow-md font-medium">
               Premium activewear for the unstoppable. Gear that moves with you.
             </p>
 
@@ -70,12 +70,12 @@ const ComingSoon = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-white/10 border-white/30 text-white placeholder:text-white/60 backdrop-blur-sm"
+                  className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/60 backdrop-blur-sm text-base"
                   required
                 />
                 <Button 
                   type="submit"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-6"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 font-semibold"
                 >
                   Notify Me
                 </Button>
@@ -84,13 +84,13 @@ const ComingSoon = () => {
 
             {/* Social Links */}
             <div className="flex justify-center gap-6">
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20">
                 <Instagram className="w-6 h-6" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20">
                 <Twitter className="w-6 h-6" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20">
                 <Mail className="w-6 h-6" />
               </Button>
             </div>
