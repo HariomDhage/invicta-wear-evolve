@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
-import { Mail, Instagram, Twitter } from 'lucide-react';
+import { Mail, Instagram, Facebook } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import comingSoonHero from '@/assets/coming-soon-hero.jpg';
 import leggingsProduct from '@/assets/leggings-product.jpg';
@@ -93,9 +93,15 @@ const ComingSoon = () => {
                   <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               </a>
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
-                <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
-              </Button>
+              <a 
+                href="https://www.facebook.com/share/16o8xWrfUZ/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
+                  <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
+                </Button>
+              </a>
               <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
               </Button>
