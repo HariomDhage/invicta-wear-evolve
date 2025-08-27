@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
-import { Mail, Instagram, Facebook } from 'lucide-react';
+import { Mail, Instagram, Facebook, Video } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from "@/integrations/supabase/client";
 import comingSoonHero from '@/assets/coming-soon-hero.jpg';
@@ -135,6 +135,15 @@ const ComingSoon = () => {
               >
                 <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
                   <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
+                </Button>
+              </a>
+              <a 
+                href="https://www.tiktok.com/@invictawears?_t=ZS-8zDakCyWglz&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
+                  <Video className="w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               </a>
               <a 
