@@ -84,9 +84,15 @@ const ComingSoon = () => {
 
             {/* Social Links */}
             <div className="flex justify-center gap-3 sm:gap-4 md:gap-6">
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
-                <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
-              </Button>
+              <a 
+                href="https://www.instagram.com/invictawears?igsh=MWphYTZvZTFlbXgyMw%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
+                  <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
+                </Button>
+              </a>
               <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
                 <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
               </Button>

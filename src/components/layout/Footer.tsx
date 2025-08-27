@@ -150,16 +150,46 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               <span className="text-sm">Follow us:</span>
               <div className="flex gap-3">
-                {[Instagram, Facebook, Twitter, Youtube].map((Icon, index) => (
+                <a 
+                  href="https://www.instagram.com/invictawears?igsh=MWphYTZvZTFlbXgyMw%3D%3D&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button
-                    key={index}
                     variant="ghost"
                     size="icon"
                     className="h-8 w-8 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
                   >
-                    <Icon className="h-4 w-4" />
+                    <Instagram className="h-4 w-4" />
                   </Button>
-                ))}
+                </a>
+                <a 
+                  href="https://www.facebook.com/share/16o8xWrfUZ/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  >
+                    <Facebook className="h-4 w-4" />
+                  </Button>
+                </a>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                >
+                  <Twitter className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                >
+                  <Youtube className="h-4 w-4" />
+                </Button>
               </div>
             </div>
 
