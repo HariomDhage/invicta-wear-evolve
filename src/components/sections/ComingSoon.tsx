@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Mail, Instagram, Facebook } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from "@/integrations/supabase/client";
 import comingSoonHero from '@/assets/coming-soon-hero.jpg';
 import leggingsProduct from '@/assets/leggings-product.jpg';
 import sportsBraProduct from '@/assets/sports-bra-product.jpg';
@@ -11,17 +12,58 @@ import gymShortsProduct from '@/assets/gym-shorts-product.jpg';
 
 const ComingSoon = () => {
   const [email, setEmail] = useState('');
+  const [earlyAccessEmail, setEarlyAccessEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleNewsletterSignup = (e: React.FormEvent) => {
+  const handleNewsletterSignup = async (e: React.FormEvent, type: 'notify' | 'early_access') => {
     e.preventDefault();
-    if (!email) return;
+    const emailToUse = type === 'notify' ? email : earlyAccessEmail;
     
-    toast({
-      title: "Thanks for signing up!",
-      description: "We'll notify you when Invictawears launches.",
-    });
-    setEmail('');
+    if (!emailToUse || isSubmitting) return;
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Call the edge function to handle newsletter signup and email sending
+      const { data, error } = await supabase.functions.invoke('send-newsletter-notification', {
+        body: { 
+          email: emailToUse,
+          type: type
+        }
+      });
+
+      if (error) {
+        console.error('Error calling edge function:', error);
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      toast({
+        title: "Thanks for signing up!",
+        description: `We'll notify you when InvictaWears launches. Check your email for confirmation!`,
+      });
+      
+      // Clear the appropriate email field
+      if (type === 'notify') {
+        setEmail('');
+      } else {
+        setEarlyAccessEmail('');
+      }
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const products = [
@@ -63,7 +105,7 @@ const ComingSoon = () => {
             </p>
 
             {/* Newsletter Signup */}
-            <form onSubmit={handleNewsletterSignup} className="max-w-sm sm:max-w-md mx-auto mb-6 sm:mb-8 px-2">
+            <form onSubmit={(e) => handleNewsletterSignup(e, 'notify')} className="max-w-sm sm:max-w-md mx-auto mb-6 sm:mb-8 px-2">
               <div className="flex flex-col xs:flex-row gap-3">
                 <Input
                   type="email"
@@ -72,12 +114,14 @@ const ComingSoon = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/60 backdrop-blur-sm text-sm sm:text-base h-12 sm:h-10"
                   required
+                  disabled={isSubmitting}
                 />
                 <Button 
                   type="submit"
+                  disabled={isSubmitting}
                   className="bg-accent hover:bg-accent/90 text-accent-foreground px-4 sm:px-6 font-semibold h-12 sm:h-10 text-sm sm:text-base whitespace-nowrap"
                 >
-                  Notify Me
+                  {isSubmitting ? "..." : "Notify Me"}
                 </Button>
               </div>
             </form>
@@ -149,17 +193,25 @@ const ComingSoon = () => {
             Join thousands of athletes waiting for the launch. Get exclusive early access and special launch pricing.
           </p>
           <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center max-w-sm sm:max-w-md mx-auto px-2">
-            <Input
-              type="email"
-              placeholder="Your email address"
-              className="bg-white/10 border-white/30 text-white placeholder:text-white/60 h-12 sm:h-10 text-sm sm:text-base"
-            />
-            <Button 
-              variant="secondary"
-              className="px-6 sm:px-8 h-12 sm:h-10 text-sm sm:text-base font-semibold whitespace-nowrap"
-            >
-              Get Early Access
-            </Button>
+            <form onSubmit={(e) => handleNewsletterSignup(e, 'early_access')} className="flex flex-col xs:flex-row gap-3 sm:gap-4 w-full">
+              <Input
+                type="email"
+                placeholder="Your email address"
+                value={earlyAccessEmail}
+                onChange={(e) => setEarlyAccessEmail(e.target.value)}
+                className="bg-white/10 border-white/30 text-white placeholder:text-white/60 h-12 sm:h-10 text-sm sm:text-base"
+                required
+                disabled={isSubmitting}
+              />
+              <Button 
+                type="submit"
+                variant="secondary"
+                disabled={isSubmitting}
+                className="px-6 sm:px-8 h-12 sm:h-10 text-sm sm:text-base font-semibold whitespace-nowrap"
+              >
+                {isSubmitting ? "..." : "Get Early Access"}
+              </Button>
+            </form>
           </div>
         </div>
       </section>
