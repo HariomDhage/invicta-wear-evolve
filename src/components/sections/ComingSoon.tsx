@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
-import { Mail, Instagram, Facebook, Video } from 'lucide-react';
+import { Mail, Instagram, Facebook } from 'lucide-react';
+import { TikTokIcon } from '@/components/ui/tiktok-icon';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from "@/integrations/supabase/client";
 import comingSoonHero from '@/assets/coming-soon-hero.jpg';
@@ -143,7 +144,7 @@ const ComingSoon = () => {
                 rel="noopener noreferrer"
               >
                 <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/20 h-10 w-10 sm:h-12 sm:w-12">
-                  <Video className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <TikTokIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               </a>
               <a 
