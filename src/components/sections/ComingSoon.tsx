@@ -10,6 +10,10 @@ import leggingsProduct from '@/assets/leggings-product.jpg';
 import sportsBraProduct from '@/assets/sports-bra-product.jpg';
 import hoodieProduct from '@/assets/hoodie-product.jpg';
 import joggersProduct from '@/assets/joggers-product.jpg';
+import tankTopProduct from '@/assets/tank-top-product.jpg';
+import gymShortsProduct from '@/assets/gym-shorts-product.jpg';
+import sneakersProduct from '@/assets/sneakers-product.jpg';
+import capProduct from '@/assets/cap-product.jpg';
 
 const ComingSoon = () => {
   const [email, setEmail] = useState('');
@@ -69,9 +73,13 @@ const ComingSoon = () => {
 
   const products = [
     { image: leggingsProduct, name: 'Athletic Leggings' },
-    { image: sportsBraProduct, name: 'Sports Bra' },
     { image: hoodieProduct, name: 'Performance Hoodie' },
-    { image: joggersProduct, name: 'Athletic Joggers' }
+    { image: sportsBraProduct, name: 'Sports Bra' },
+    { image: joggersProduct, name: 'Athletic Joggers' },
+    { image: tankTopProduct, name: 'Tank Top' },
+    { image: gymShortsProduct, name: 'Gym Shorts' },
+    { image: sneakersProduct, name: 'Athletic Sneakers' },
+    { image: capProduct, name: 'Performance Cap' }
   ];
 
   return (
