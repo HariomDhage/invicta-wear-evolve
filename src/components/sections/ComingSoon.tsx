@@ -8,8 +8,8 @@ import { supabase } from "@/integrations/supabase/client";
 import comingSoonHero from '@/assets/coming-soon-hero.jpg';
 import leggingsProduct from '@/assets/leggings-product.jpg';
 import sportsBraProduct from '@/assets/sports-bra-product.jpg';
-import tankTopProduct from '@/assets/tank-top-product.jpg';
-import gymShortsProduct from '@/assets/gym-shorts-product.jpg';
+import hoodieProduct from '@/assets/hoodie-product.jpg';
+import joggersProduct from '@/assets/joggers-product.jpg';
 
 const ComingSoon = () => {
   const [email, setEmail] = useState('');
@@ -70,8 +70,8 @@ const ComingSoon = () => {
   const products = [
     { image: leggingsProduct, name: 'Athletic Leggings' },
     { image: sportsBraProduct, name: 'Sports Bra' },
-    { image: tankTopProduct, name: 'Tank Top' },
-    { image: gymShortsProduct, name: 'Gym Shorts' }
+    { image: hoodieProduct, name: 'Performance Hoodie' },
+    { image: joggersProduct, name: 'Athletic Joggers' }
   ];
 
   return (
